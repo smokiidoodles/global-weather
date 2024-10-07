@@ -6,6 +6,7 @@ import Default from './weather-icons/Partly-Cloudy.svg';
 import PartlyCloudy from './weather-icons/Partly-Cloudy.svg';
 import '../index.css';
 import axios from 'axios';
+//Weatherapi.com was used to fetch information for this website.
 
 const Weather = () => {
     const [city, setCity] = useState('');
@@ -15,7 +16,7 @@ const Weather = () => {
 
     const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
-// On youtube there are videos that explain how to include a loading animation in React.
+
     const getWeather = async () => {
         setLoading(true);
         try {
@@ -35,6 +36,7 @@ const Weather = () => {
         }
     };
 
+    // using different custom svgs to show a visual of the weather to the user.
     const getIconPath = (condition) => {
         switch (condition.toLowerCase().replace(/\s+/g, '')) {
             case 'sunny':
